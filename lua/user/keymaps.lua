@@ -16,7 +16,7 @@ keymap("n", "<leader><esc>", "<cmd>nohls<cr>", opts)
 keymap("n", "<leader>m", "<cmd>let buf=bufnr('%') | exec 'bufdo update' | exec 'b' buf <bar> silent make <bar> copen<cr>", opts)
 
 -- highlight current date
-keymap("n", "<leader>h", "/<C-R>=strftime('%d.%m.%Y %a')<cr><cr>", opts)
+keymap("n", "<leader>oo", "/<C-R>=strftime('%d.%m.%Y %a')<cr><cr>", opts)
 
 -- search and replace
 keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", {noremap=true} )
@@ -62,6 +62,8 @@ keymap("n", "<leader>bd", "<cmd>BufferLineSortByDirectory<cr>", opts)
 -- bufferline
 keymap("n", "<leader>gg", "<cmd>Git<cr>", opts)
 keymap("n", "<leader>gd", "<cmd>Git diff<cr>", opts)
+keymap("n", "<leader>gc", "<cmd>Git commit<cr>", opts)
+keymap("n", "<leader>gp", "<cmd>Git push<cr>", opts)
 
 -- nvim-tree
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
