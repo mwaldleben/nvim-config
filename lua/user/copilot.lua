@@ -8,8 +8,6 @@ if not cp_cmp_status_ok then
   print("Error in require for copilot_cmp")
 end
 
-copilot.setup({
-  copilot_node_command = "/home/cfse2/waldleben/config/node/bin/node",
-})
+copilot.setup()
 copilot_cmp.setup()
 

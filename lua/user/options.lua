@@ -35,10 +35,3 @@ end
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- host programs
-vim.g.python3_host_prog = "/home/cfse2/waldleben/config/venv/bin/python3"
-vim.g.python3_host_prog_pip = "/home/cfse2/waldleben/config/venv/bin/pip3"
-vim.g.loaded_node_provider = 0
-vim.g.loaded_rust_provider = 0
-vim.g.loaded_perl_provider = 0
