@@ -3,4 +3,6 @@ if not status_ok then
   print("Error in require for gitsigns")
 end
 
-gitsigns.setup()
+gitsigns.setup({
+  attach_to_untracked = false
+})

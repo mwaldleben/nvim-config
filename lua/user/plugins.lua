@@ -51,6 +51,8 @@ return packer.startup(function(use)
 
 	-- colorscheme
 	use "folke/tokyonight.nvim"
+  use "EdenEast/nightfox.nvim"
+  use "rebelot/kanagawa.nvim"
 
   -- comment
   use "numToStr/Comment.nvim"
