@@ -6,17 +6,11 @@ local keymap = vim.api.nvim_set_keymap
 -- leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- normal mode (=n) --
 -- turn off highlight search
 keymap("n", "<leader><esc>", "<cmd>nohls<cr>", opts)
-
--- make
-keymap("n", "<leader>m", "<cmd>let buf=bufnr('%') | exec 'bufdo update' | exec 'b' buf <bar> silent make <bar> copen<cr>", opts)
-
--- highlight current date
-keymap("n", "<leader>oo", "/<C-R>=strftime('%d.%m.%Y %a')<cr><cr>", opts)
 
 -- search and replace
 keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", {noremap=true} )
@@ -24,42 +18,35 @@ keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", {noremap=true} )
 -- insert mode (=i)
 
 -- visual mode (=v) --
-keymap("v", "<A-j>", "<cmd>m .+1<cr>==", opts)
-keymap("v", "<A-k>", "<cmd>m .-2<cr>==", opts)
-
 --  stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- move text up and down
 -- visual block mode (=x) --
--- move text up and down
-keymap("x", "J", "<cmd>move '>+1<cr>gv-gv", opts)
-keymap("x", "K", "<cmd>move '<-2<cr>gv-gv", opts)
-keymap("x", "<A-j>", "<cmd>move '>+1<cr>gv-gv", opts)
-keymap("x", "<A-k>", "<cmd>move '<-2<cr>gv-gv", opts)
 
 -- plugins --
--- bufferline
-keymap("n", "<S-l>", "<cmd>bnext<cr>", opts)
-keymap("n", "<S-h>", "<cmd>bprevious<cr>", opts)
+-- cokeline
+keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", opts)
+keymap("n", "<S-l>", "<Plug>(cokeline-focus-next)", opts)
+keymap("n", "<Leader>p", "<Plug>(cokeline-switch-prev)", opts)
+keymap("n", "<Leader>n", "<Plug>(cokeline-switch-next)", opts)
 
-keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
-keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", opts)
-keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", opts)
-keymap("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", opts)
-keymap("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>", opts)
-keymap("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", opts)
-keymap("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<cr>", opts)
-keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
-keymap("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<cr>", opts)
+for i = 1, 9 do
+  keymap(
+    "n",
+    ("<F%s>"):format(i),
+    ("<Plug>(cokeline-focus-%s)"):format(i),
+    opts 
+  )
+  keymap(
+    "n",
+    ("<Leader>%s"):format(i),
+    ("<Plug>(cokeline-switch-%s)"):format(i),
+    opts
+  )
+end
 
-keymap("n", "<S-A-l>", "<cmd>BufferLineMoveNext<cr>", opts)
-keymap("n", "<S-A-h>", "<cmd>BufferLineMovePrev<cr>", opts)
-keymap("n", "<leader>be", "<cmd>BufferLineSortByExtension<cr>", opts)
-keymap("n", "<leader>bd", "<cmd>BufferLineSortByDirectory<cr>", opts)
-
--- bufferline
+-- git
 keymap("n", "<leader>gg", "<cmd>Git<cr>", opts)
 keymap("n", "<leader>gd", "<cmd>Git diff<cr>", opts)
 keymap("n", "<leader>gc", "<cmd>Git commit<cr>", opts)
@@ -97,7 +84,6 @@ keymap("n", "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 
 -- toggleterm
--- keymap("n", "<C-[>", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
 keymap("n", "<leader>x", "<cmd>let buf=bufnr('%') <bar> exec 'bufdo update' <bar> exec 'b' buf <bar> TermExec cmd='make run'<cr>", opts)
 keymap("n", "<leader>xp", "<cmd>let buf=bufnr('%') <bar> exec 'bufdo update' <bar> exec 'b' buf <bar> TermExec cmd='python main.py'<cr>", opts)
 
@@ -106,6 +92,5 @@ keymap("n", "<leader>tt", "<cmd>TroubleToggle<cr>", opts)
 keymap("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
 keymap("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", opts)
-keymap("n", "<leader>tq", "<cmd>copen<cr>", opts)
--- keymap("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
+keymap("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
 keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
