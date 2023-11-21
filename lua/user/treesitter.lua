@@ -4,10 +4,10 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = { "lua", "c", "fortran" },
+  ensure_installed = { "lua", "c", "fortran", "latex", "make", "html", "css", "astro", "typescript", "org" },
   ignore_install = { "" },
   highlight = {
     enable = true,
-    -- disable = { "fotran" },
+    additional_vim_regex_highlighting = {"org"},
   },
 }
