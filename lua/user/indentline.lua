@@ -3,4 +3,4 @@ if not status_ok then
   print("Error in require for indent-blankline")
 end
 
-ibl.setup({})
+ibl.setup()

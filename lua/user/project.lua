@@ -1,13 +1,3 @@
-local status_ok, project = pcall(require, "project_nvim")
-if not status_ok then
-  print("Error in require for project_nvim")
-end
+require("project_nvim").setup()
 
-project.setup()
-
-local tele_status_ok, telescope = pcall(require, "telescope")
-if not tele_status_ok then
-  print("Error in require for telescope")
-end
-
-telescope.load_extension("projects")
+require("telescope").load_extension("projects")
