@@ -1,9 +1,7 @@
-local fn = vim.fn
-
 -- install plugin manager
-local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  fn.system({
+  vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
@@ -59,9 +57,11 @@ lazy.setup({
   "nvim-lualine/lualine.nvim",
 
   -- lsp
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+  "neovim/nvim-lspconfig",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
+  "jay-babu/mason-null-ls.nvim",
   "nvimtools/none-ls.nvim",
 
   -- nvimtree
