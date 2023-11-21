@@ -1,5 +1,5 @@
 -- current colorscheme
-vim.cmd [[
+vim.cmd[[
 try
   colorscheme catppuccin-frappe
 catch /^Vim\%((\a\+)\)\=:E185/
