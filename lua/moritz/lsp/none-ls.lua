@@ -1,4 +1,4 @@
-local lsp = require("user.lsp.lsp-zero")
+local lsp = require("moritz.lsp.lsp-zero")
 
 local null_ls = require("null-ls")
 local null_opts = lsp.build_options("null-ls", {})

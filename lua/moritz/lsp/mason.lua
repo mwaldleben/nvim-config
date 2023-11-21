@@ -1,4 +1,4 @@
-local lsp = require("user.lsp.lsp-zero")
+local lsp = require("moritz.lsp.lsp-zero")
 
 local servers = {
 	"pyright",
