@@ -3,9 +3,6 @@ if not status_ok then
   print("Error in require for nvim-tree")
 end
 
-nvim_tree.setup({
-  disable_netrw = false,
-  git = {
-    ignore = false
-  }
-})
+nvim_tree.setup {
+  disable_netrw = true,
+}
