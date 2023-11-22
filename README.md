@@ -29,8 +29,9 @@ installation of plugins on the first launch.
       - [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) (null-ls successor)
    - Syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
    - Convenient terminals through [toogleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+   - Fuzzy file search [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
    - A bufferline with [nvim-cokeline](https://github.com/willothy/nvim-cokeline.git).
-   - Git integration through [vim-fugitive](https://github.com/tpope/vim-fugitive) and [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+   - Git integration through [vim-fugitive](https://github.com/tpope/vim-fugitive) and [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
    - And more...
 - Leader key-based keymaps
 - Colorscheme: [catppuccin](https://github.com/catppuccin/nvim.git)
