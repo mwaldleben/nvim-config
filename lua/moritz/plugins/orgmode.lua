@@ -19,5 +19,8 @@ return {
       org_agenda_files = { "~/org/*" },
       org_default_notes_file = "~/org/refile.org",
     })
+
+    -- TODO: Issues with folding, https://github.com/nvim-orgmode/orgmode/issues/614
+    vim.cmd([[setlocal nofoldenable]])
   end,
 }
