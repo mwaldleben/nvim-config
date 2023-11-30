@@ -9,7 +9,7 @@ return {
 
     telescope.setup({
       defaults = {
-        file_ignore_patterns = { ".git/", "%.o", "%.x", "%.mod", "%.out", "%.pdf", "%.zip" },
+        file_ignore_patterns = { ".git/", "%.x", "%.mod", "%.out", "%.pdf", "%.zip" },
         path_display = { "truncate" },
       },
     })
@@ -19,7 +19,19 @@ return {
     keymap.set(
       "n",
       "<leader>ff",
+      "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = false}))<cr>",
+      { desc = "Fuzzy find files in project directory" }
+    )
+    keymap.set(
+      "n",
+      "<leader>fh",
       "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true}))<cr>",
+      { desc = "Fuzzy find files in project directory" }
+    )
+    keymap.set(
+      "n",
+      "<leader>fc",
+      "<cmd>lua require'telescope.builtin'.find_files({ cwd = require'telescope.utils'.buffer_dir()})<cr>",
       { desc = "Fuzzy find files in cwd" }
     )
     keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
