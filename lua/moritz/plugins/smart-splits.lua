@@ -1,6 +1,6 @@
 return {
-	"mrjones2014/smart-splits.nvim",
-	config = function()
+  "mrjones2014/smart-splits.nvim",
+  config = function()
     local keymap = vim.keymap
 
     keymap.set("n", "<A-h>", "<cmd>SmartResizeLeft<cr>")

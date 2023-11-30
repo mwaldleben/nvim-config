@@ -2,7 +2,7 @@
 return {
   "nvim-lua/plenary.nvim",
 
-	"xiyaowong/transparent.nvim",
+  "xiyaowong/transparent.nvim",
 
-	"JuliaEditorSupport/julia-vim",
+  "JuliaEditorSupport/julia-vim",
 }
