@@ -3,7 +3,6 @@ return {
   dependencies = {
     { "nvim-treesitter/nvim-treesitter", lazy = true },
   },
-  event = "VeryLazy",
   config = function()
     require("orgmode").setup_ts_grammar()
 
