@@ -4,5 +4,9 @@ return {
 
   "xiyaowong/transparent.nvim",
 
-  "JuliaEditorSupport/julia-vim",
+  "tpope/vim-surround",
+
+  "tpope/vim-repeat",
+
+  "JuliaEditorSupport/julia-vim"
 }
