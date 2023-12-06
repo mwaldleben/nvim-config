@@ -8,5 +8,7 @@ return {
 
   "tpope/vim-repeat",
 
-  "JuliaEditorSupport/julia-vim"
+  "JuliaEditorSupport/julia-vim",
+
+  "norcalli/nvim-colorizer.lua",
 }
