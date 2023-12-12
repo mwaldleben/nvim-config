@@ -8,7 +8,7 @@ return {
       size = 25,
       open_mapping = [[<c-\>]],
       direction = "horizontal",
-      shading_factor = "-20",
+      shading_factor = "-10",
     })
 
     function _G.set_terminal_keymaps()
