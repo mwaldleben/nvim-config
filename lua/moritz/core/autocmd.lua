@@ -9,3 +9,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.cmd("autocmd FileType qf wincmd J")
+
+vim.cmd("autocmd FileType latex,tex,markdown,md,mail setlocal spell spelllang=de_ch,en_us")
