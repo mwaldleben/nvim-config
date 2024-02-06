@@ -2,9 +2,10 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
-    { "L3MON4D3/LuaSnip" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
+    { 'saadparwaiz1/cmp_luasnip' },
+    { "L3MON4D3/LuaSnip" },
   },
   config = function()
     local lsp_zero = require("lsp-zero")
@@ -19,7 +20,6 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-        { name = "nvim_lua" },
       },
       formatting = lsp_zero.cmp_format(),
       mapping = cmp.mapping.preset.insert({
