@@ -5,7 +5,6 @@ return {
     { "L3MON4D3/LuaSnip" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
-    { "hrsh7th/cmp-cmdline" },
   },
   config = function()
     local lsp_zero = require("lsp-zero")
@@ -16,10 +15,11 @@ return {
 
     cmp.setup({
       sources = {
-        { name = "nvim_lua" },
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "nvim_lua" },
       },
       formatting = lsp_zero.cmp_format(),
       mapping = cmp.mapping.preset.insert({

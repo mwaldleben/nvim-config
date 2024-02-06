@@ -42,16 +42,17 @@ return {
         timeout_ms = 10000,
       },
       servers = {
-        ["null-ls"] = { "python", "lua" },
+        ["null-ls"] = { "python", "cpp", "lua" },
       },
     })
 
     local servers = {
-      "pyright",
-      "lua_ls",
-      "julials",
-      "bashls",
       "astro",
+      "bashls",
+      "clangd",
+      "julials",
+      "lua_ls",
+      "pyright",
       "tailwindcss",
     }
 
