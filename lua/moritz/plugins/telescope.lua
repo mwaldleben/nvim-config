@@ -9,7 +9,7 @@ return {
 
     telescope.setup({
       defaults = {
-        file_ignore_patterns = { ".git/", "%.x", "%.mod", "%.out", "%.pdf", "%.zip" },
+        file_ignore_patterns = { ".git/", "%.x", "%.mod", "%.out", "%.pdf", "%.zip", "package-lock.json", "node_modules/" },
         path_display = { "truncate" },
       },
     })

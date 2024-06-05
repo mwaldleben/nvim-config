@@ -54,6 +54,7 @@ return {
       "lua_ls",
       "pyright",
       "tailwindcss",
+      "tsserver",
     }
 
     require("mason-lspconfig").setup({
