@@ -11,4 +11,6 @@ return {
   "JuliaEditorSupport/julia-vim",
 
   "norcalli/nvim-colorizer.lua",
+
+  "renerocksai/calendar-vim",
 }
