@@ -1,11 +1,11 @@
-return  {
+return {
   "renerocksai/telekasten.nvim",
-  dependencies = {"nvim-telescope/telescope.nvim"},
-  config = function ()
+  dependencies = { "nvim-telescope/telescope.nvim" },
+  config = function()
     require("telekasten").setup({
       home = vim.fn.expand("~/notes"),
       weeklies = vim.fn.expand("~/notes/planning"),
-      template_new_weekly = vim.fn.expand("~/notes/planning/template.md")
+      template_new_weekly = vim.fn.expand("~/notes/planning/template.md"),
     })
 
     local keymap = vim.keymap
