@@ -17,7 +17,7 @@ require("lazy").setup({ { import = "moritz.plugins" }, { import = "moritz.plugin
   },
   checker = {
     enabled = true,
-    frequency = 86400,
+    frequency = 604800, -- check for updates once a week
   },
   change_detection = {
     notify = false,
