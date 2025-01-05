@@ -47,14 +47,13 @@ return {
     })
 
     local servers = {
-      "astro",
       "bashls",
       "clangd",
       "julials",
       "lua_ls",
       "pyright",
       "tailwindcss",
-      "tsserver",
+      "ts_ls",
     }
 
     require("mason-lspconfig").setup({
