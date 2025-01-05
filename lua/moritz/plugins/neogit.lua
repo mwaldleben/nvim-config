@@ -17,5 +17,5 @@ return {
     keymap.set("n", "<leader>gp", "<cmd>Neogit pull<cr>")
     keymap.set("n", "<leader>gP", "<cmd>Neogit push<cr>")
     keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>")
-  end
+  end,
 }
