@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "fugitive" },
+  pattern = { "qf", "help" },
   callback = function()
     vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR> 
