@@ -1,8 +1,6 @@
 # My Neovim Configuration
 
-
 This repository contains my personal Neovim configuration.
-
 
 ![My Neovim Setup](showcase.png)
 
@@ -10,9 +8,10 @@ This repository contains my personal Neovim configuration.
 
 1. **Clone this repository:**
 
-   ```bash
-   git clone https://github.com/morwald/nvim.git ~/.config/nvim
-   ```
+```bash
+git clone https://github.com/morwald/nvim.git ~/.config/nvim
+```
+
 2. **Launch Neovim:**
 
 Open Neovim by running nvim in your terminal. The plugin manager
@@ -31,7 +30,9 @@ installation of plugins on the first launch.
    - Convenient terminals through [toogleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
    - Fuzzy file search [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
    - A bufferline with [nvim-cokeline](https://github.com/willothy/nvim-cokeline.git).
-   - Git integration through [vim-fugitive](https://github.com/tpope/vim-fugitive) and [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+   - Git integration through
+     [neogit](https://github.com/NeogitOrg/neogit) and
+     [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
    - And more...
-- Leader key-based keymaps
+- Leader key focused keymaps
 - Colorscheme: [catppuccin](https://github.com/catppuccin/nvim.git)
