@@ -5,6 +5,7 @@ local options = {
   completeopt = { "menuone", "noselect" }, -- completion options for cmp
   cursorline = true, -- highlight the current line
   expandtab = true, -- tabs are converted to spaces
+  fixendofline = false, -- preserve missing end of line character
   mouse = "a", -- mouse enabled in all modes
   number = true, -- numbered lines enabled
   pumheight = 10, -- hight of pop up menu
