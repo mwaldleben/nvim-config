@@ -9,9 +9,6 @@ vim.g.maplocalleader = ","
 -- turn off highlight search
 keymap.set("n", "<leader><esc>", "<cmd>nohls<cr>")
 
--- search and replace
-keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", { desc = "Search and replace word under cursor" })
-
 -- insert mode (=i)
 
 -- visual mode (=v) --
