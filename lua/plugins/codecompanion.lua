@@ -12,5 +12,6 @@ return {
         adapter = 'copilot',
       },
     },
+    ignore_warnings = true,
   },
 }
