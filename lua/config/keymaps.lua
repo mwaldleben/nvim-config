@@ -1,19 +1,13 @@
-local keymap = vim.keymap
-
--- leader key
-keymap.set("", "<Space>", "<Nop>")
+-- Space as leader key
+vim.keymap.set("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
+
+-- Comma as local leader key
 vim.g.maplocalleader = ","
 
--- normal mode (=n) --
--- turn off highlight search
-keymap.set("n", "<leader><esc>", "<cmd>nohls<cr>")
+-- Turn off highlight search
+vim.keymap.set("n", "<leader><esc>", "<cmd>nohls<cr>")
 
--- insert mode (=i)
-
--- visual mode (=v) --
---  stay in indent mode
-keymap.set("v", "<", "<gv")
-keymap.set("v", ">", ">gv")
-
--- visual block mode (=x) --
+--  Stay in indent mode when visually selecting
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
