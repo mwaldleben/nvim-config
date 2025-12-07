@@ -1,5 +1,5 @@
 local options = {
-  -- only non default settings are set here
+  -- Only non default settings are set here
   autoindent = true, -- autoindent text
   clipboard = "unnamedplus", -- access system clipboard
   completeopt = { "menuone", "noselect" }, -- completion options for cmp
