@@ -51,7 +51,7 @@ return {
             group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
             callback = function(event2)
               vim.lsp.buf.clear_references()
-              vim.api.nvim_clear_autocmds { group = 'lsp-highlight', buffer = event2.buf }
+              vim.api.nvim_clear_autocmds({ group = 'lsp-highlight', buffer = event2.buf })
             end,
           })
         end
@@ -60,7 +60,7 @@ return {
 
     -- Diagnostic Config
     -- See :help vim.diagnostic.Opts
-    vim.diagnostic.config {
+    vim.diagnostic.config({
       severity_sort = true,
       float = { border = 'rounded', source = 'if_many' },
       underline = { severity = vim.diagnostic.severity.ERROR },
@@ -74,7 +74,7 @@ return {
       } or {},
       -- Don't show inline virtual text diagnostics
       virtual_text = false,
-    }
+    })
 
     --  Broadcast blink.cmp capabilities to languages server
     local capabilities = require('blink.cmp').get_lsp_capabilities()
@@ -97,9 +97,9 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua',
     })
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+    require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
 
-    require('mason-lspconfig').setup {
+    require('mason-lspconfig').setup({
       ensure_installed = {}, -- explicitly set to an empty table (installs via mason-tool-installer)
       automatic_installation = false,
       handlers = {
@@ -109,6 +109,6 @@ return {
           require('lspconfig')[server_name].setup(server)
         end,
       },
-    }
+    })
   end,
 }

@@ -1,15 +1,15 @@
 return {
-  "olimorris/codecompanion.nvim",
+  'olimorris/codecompanion.nvim',
   dependencies = {
-    "nvim-lua/plenary.nvim",
+    'nvim-lua/plenary.nvim',
   },
   opts = {
     strategies = {
       chat = {
-        name = "copilot",
+        name = 'copilot',
       },
       inline = {
-        adapter = "copilot",
+        adapter = 'copilot',
       },
     },
   },
