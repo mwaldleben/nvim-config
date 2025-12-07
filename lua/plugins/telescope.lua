@@ -1,11 +1,11 @@
 return {
   'nvim-telescope/telescope.nvim',
-  opts = {},
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
     'DrKJeff16/project.nvim',
   },
+  opts = {},
   keys = {
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[S]earch [H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[S]earch [K]eymaps' },
