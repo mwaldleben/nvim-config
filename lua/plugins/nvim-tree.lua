@@ -11,6 +11,6 @@ return {
     },
   },
   keys = {
-    { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'Open file [E]xplorer' },
+    { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTreer' },
   },
 }

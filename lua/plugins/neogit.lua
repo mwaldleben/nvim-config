@@ -5,9 +5,8 @@ return {
     'sindrets/diffview.nvim',
   },
   keys = {
-    { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Neo[g]it' },
-    { '<leader>gc', '<cmd>Neogit commit<cr>', desc = 'Neo[g]it [C]ommit' },
-    { '<leader>gp', '<cmd>Neogit pull<cr>', desc = 'Neo[g]it [p]ull' },
-    { '<leader>gP', '<cmd>Neogit push<cr>', desc = 'Neo[g]it [P]ush' },
+    { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Neogit open' },
+    { '<leader>gp', '<cmd>Neogit pull<cr>', desc = 'Neogit pull' },
+    { '<leader>gP', '<cmd>Neogit push<cr>', desc = 'Neogit push' },
   },
 }

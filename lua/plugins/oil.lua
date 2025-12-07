@@ -6,6 +6,6 @@ return {
   opts = {},
   lazy = false,
   keys = {
-    { '-', '<cmd>Oil --float<cr>', desc = '[-] Open parent directory' },
+    { '-', '<cmd>Oil --float<cr>', desc = 'Open parent directory with' },
   },
 }
