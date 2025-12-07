@@ -1,15 +1,9 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    -- NOTE:  `opts = {}` is the same as calling `require('mason').setup({})`
     { 'mason-org/mason.nvim', opts = {} },
     'mason-org/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-    -- Useful status updates for LSP.
-    { 'j-hui/fidget.nvim', opts = {} },
-
-    -- Allows extra capabilities provided by blink.cmp
     'saghen/blink.cmp',
   },
   config = function()
@@ -30,40 +24,14 @@ return {
         map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
         map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
         map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
-
-        -- Autocommands to highlight references for word under cursor
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
-          local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.document_highlight,
-          })
-
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.clear_references,
-          })
-
-          vim.api.nvim_create_autocmd('LspDetach', {
-            group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
-            callback = function(event2)
-              vim.lsp.buf.clear_references()
-              vim.api.nvim_clear_autocmds({ group = 'lsp-highlight', buffer = event2.buf })
-            end,
-          })
-        end
       end,
     })
 
     -- Diagnostic Config
-    -- See :help vim.diagnostic.Opts
     vim.diagnostic.config({
       severity_sort = true,
       float = { border = 'rounded', source = 'if_many' },
-      underline = { severity = vim.diagnostic.severity.ERROR },
+      underline = false,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = '󰅚 ',
@@ -71,12 +39,19 @@ return {
           [vim.diagnostic.severity.INFO] = '󰋽 ',
           [vim.diagnostic.severity.HINT] = '󰌶 ',
         },
-      } or {},
-      -- Don't show inline virtual text diagnostics
-      virtual_text = false,
+      },
+      jump = { float = true }, -- show float when jumping
+      virtual_text = false, -- no inline diagnostic text
     })
+    vim.keymap.set('n', 'K', vim.diagnostic.open_float)
+    vim.keymap.set('n', '[d', function()
+      vim.diagnostic.jump({ count = -1 })
+    end)
+    vim.keymap.set('n', ']d', function()
+      vim.diagnostic.jump({ count = 1 })
+    end)
 
-    --  Broadcast blink.cmp capabilities to languages server
+    -- Broadcast blink.cmp capabilities to languages server
     local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     local servers = {
@@ -101,6 +76,7 @@ return {
 
     require('mason-lspconfig').setup({
       ensure_installed = {}, -- explicitly set to an empty table (installs via mason-tool-installer)
+      automatic_enable = true,
       automatic_installation = false,
       handlers = {
         function(server_name)
