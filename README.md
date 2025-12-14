@@ -23,16 +23,14 @@ installation of plugins on the first launch.
 - Organized configuration setup with [lazy.nvim](https://github.com/folke/lazy.nvim)
 - Utilizes various plugins for enhanced functionality:
    - LSP integration with easy installation of servers, formatting, and linting:
+      - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
       - [mason.nvim](https://github.com/williamboman/mason.nvim)
-      - [lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim.git)
-      - [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) (null-ls successor)
    - Syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+   - Completion engine [blink.cmp](https://github.com/Saghen/blink.cmp)
    - Convenient terminals through [toogleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
    - Fuzzy file search [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
-   - A bufferline with [nvim-cokeline](https://github.com/willothy/nvim-cokeline.git).
    - Git integration through
      [neogit](https://github.com/NeogitOrg/neogit) and
      [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
    - And more...
-- Leader key focused keymaps
 - Colorscheme: [catppuccin](https://github.com/catppuccin/nvim.git)
